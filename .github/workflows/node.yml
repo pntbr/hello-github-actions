@@ -9,7 +9,9 @@ jobs:
         run: date +%s > report.txt
       - name: Commit report
         run: |
+          touch truc.txt
           git config --global user.name 'pntbr'
           git config --global user.email 'stephane@scopyleft.fr'
-          git commit -am "Automated report"
+          git add .
+          git commit -m "Automated report"
           git push
